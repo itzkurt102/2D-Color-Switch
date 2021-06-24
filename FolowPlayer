@@ -1,0 +1,16 @@
+using UnityEngine;
+
+public class FollowPlayer : MonoBehaviour
+{
+
+    public Transform player;
+
+    //Each update, if the player's gameobject goes above a certain y-position threshold, the camera will move up with it.
+    void Update()
+    {
+        if (player.position.y > transform.position.y)
+        {
+            transform.position = new Vector3(transform.position.x, player.position.y, transform.position.z);
+        }
+    }
+}
